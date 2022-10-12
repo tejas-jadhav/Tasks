@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clContent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+        <Button
+            android:id="@+id/btnSort"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/poppins"
+            android:letterSpacing="0"
+            android:minHeight="0dp"
+            android:paddingTop="8dp"
+            android:text="@string/sort_by_time"
+            android:textAllCaps="false"
+            android:textSize="14sp"
+            android:theme="@style/Theme.Tasks.Button.Text"
+            app:icon="@drawable/ic_baseline_arrow_downward_24"
+            app:iconGravity="end"
+            app:iconSize="18sp"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvCompletedCount"
+        tools:text="Completed(5)"
+        android:textSize="12sp"
+        app:layout_constraintRight_toLeftOf="@id/ibViewAs"
+        app:layout_constraintTop_toTopOf="@id/ibViewAs"
+        app:layout_constraintBottom_toBottomOf="@id/ibViewAs"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+        <ImageButton
+            android:id="@+id/ibViewAs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/change_view_of_items"
+            android:padding="4dp"
+            android:src="@drawable/ic_outline_view_module_24"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMainTasks"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:paddingVertical="4dp"
+            tools:listitem="@layout/item_task"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnSort" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieAnimationView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:elevation="6dp"
+            android:forceDarkAllowed="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnSort"
+            app:layout_constraintVertical_bias="0.285"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="false"
+            app:lottie_rawRes="@raw/completed_animation"
+            tools:visibility="invisible"
+            />
+
+        <TextView
+            android:id="@+id/tvAddNotesHelper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_tasks"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lottieAnimationView"
+            tools:visibility="invisible"
+            />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabTasks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:contentDescription="@string/create_task"
+        android:src="@drawable/ic_baseline_add_24"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <View
+        android:id="@+id/fabAnimationDummy"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/circle"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/fabTasks"
+        app:layout_constraintLeft_toLeftOf="@id/fabTasks"
+        app:layout_constraintRight_toRightOf="@id/fabTasks"
+        app:layout_constraintTop_toTopOf="@id/fabTasks"
+        android:forceDarkAllowed="true"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

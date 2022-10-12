@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="18dp"
+        android:background="@color/white"
+        android:paddingVertical="20dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivPriority"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundedImageView"
+            tools:src="@drawable/green_img" />
+
+        <Button
+            android:id="@+id/btnChangePriority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:minHeight="0dp"
+            android:shadowColor="@color/dark_gray"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="20"
+            android:text="@string/change_priority"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+
+            app:layout_constraintLeft_toLeftOf="@id/ivPriority"
+            app:layout_constraintTop_toTopOf="@id/ivPriority" />
+
+        <CheckBox
+            android:id="@+id/cbTaskCompleted"
+            style="@style/CircularCheckBox"
+            app:layout_constraintTop_toTopOf="@id/ivPriority"
+            app:layout_constraintRight_toRightOf="@id/ivPriority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvTitleHelper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivPriority" />
+
+        <TextView
+            android:id="@+id/tvTaskTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="22sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitleHelper"
+            tools:text="Hello this is sample title" />
+
+        <View
+            android:id="@+id/placeholderBgView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="-14dp"
+            android:background="@drawable/rounded"
+            app:layout_constraintBottom_toBottomOf="@id/tvDueDate"
+            app:layout_constraintTop_toBottomOf="@id/tvTaskTitle"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="18dp"
+
+
+            />
+
+        <ImageView
+            android:id="@+id/ivListIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/circle"
+            android:backgroundTint="@color/white"
+            android:cropToPadding="true"
+            android:padding="8dp"
+            app:layout_constraintLeft_toLeftOf="@id/placeholderBgView"
+            app:layout_constraintTop_toTopOf="@id/placeholderBgView"
+            app:tint="@color/primaryColor"
+            tools:src="@drawable/ic_baseline_checklist_24" />
+
+        <TextView
+            android:id="@+id/tvHelperTaskList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="10dp"
+            android:includeFontPadding="false"
+            android:text="@string/list"
+            android:textColor="@color/dark_gray"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@id/ivListIcon"
+            app:layout_constraintTop_toTopOf="@id/placeholderBgView" />
+
+        <TextView
+            android:id="@+id/tvTaskListName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_medium"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:textColor="@color/primaryTextColorLight"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="@id/tvHelperTaskList"
+            app:layout_constraintRight_toLeftOf="@id/verticalMiddleGuideline"
+            app:layout_constraintTop_toBottomOf="@id/tvHelperTaskList"
+            tools:text="Primary list" />
+
+        <ImageView
+            android:id="@+id/ivCalendarIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/circle"
+            android:backgroundTint="@color/white"
+            android:cropToPadding="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_outline_calendar_today_24"
+            app:layout_constraintLeft_toLeftOf="@id/verticalMiddleGuideline"
+            app:layout_constraintTop_toTopOf="@id/placeholderBgView"
+            app:tint="@color/primaryColor" />
+
+        <TextView
+            android:id="@+id/tvDueDateHelper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="10dp"
+            android:includeFontPadding="false"
+            android:text="@string/due_date"
+            android:textColor="@color/dark_gray"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@id/ivCalendarIcon"
+            app:layout_constraintTop_toTopOf="@id/placeholderBgView" />
+
+        <TextView
+            android:id="@+id/tvDueDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_medium"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:textColor="@color/primaryTextColorLight"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="@id/tvDueDateHelper"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHelperTaskList"
+            tools:text="14 Days to go" />
+
+
+        <ImageView
+            android:id="@+id/ivClockIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_baseline_alarm_24"
+            app:layout_constraintLeft_toLeftOf="@id/placeholderBgView"
+            app:layout_constraintTop_toBottomOf="@id/placeholderBgView" />
+
+        <TextView
+            android:id="@+id/tvTaskTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/poppins_medium"
+            android:includeFontPadding="false"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivClockIcon"
+            app:layout_constraintLeft_toRightOf="@id/ivClockIcon"
+            app:layout_constraintTop_toTopOf="@id/ivClockIcon"
+            tools:text="10:20 AM" />
+
+        <CheckBox
+            android:id="@+id/cbSetAlarm"
+            style="@style/CircularCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            app:layout_constraintRight_toLeftOf="@id/tvSetAlarm"
+            app:layout_constraintTop_toTopOf="@id/tvSetAlarm" />
+
+        <TextView
+            android:id="@+id/tvSetAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/poppins_medium"
+            android:includeFontPadding="false"
+            android:text="@string/set_alarm"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivClockIcon"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivClockIcon" />
+
+        <TextView
+            android:id="@+id/tvSetProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/set_progress"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivClockIcon" />
+
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:progress="56"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/tvProgressText"
+            app:layout_constraintTop_toBottomOf="@id/tvSetProgress"
+
+            />
+
+        <TextView
+            android:id="@+id/tvProgressText"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:textAlignment="textEnd"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSetProgress"
+            tools:text="56%" />
+
+        <TextView
+            android:id="@+id/tvTaskDescriptionHelper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/description"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/seekBar" />
+
+        <TextView
+            android:id="@+id/tvTaskDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/rounded"
+            android:padding="12dp"
+            android:textColor="@color/primaryTextColorLight"
+            android:textSize="17sp"
+            android:minLines="12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTaskDescriptionHelper"
+            tools:text="Hello this is Today's task" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalMiddleGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

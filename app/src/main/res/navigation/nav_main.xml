@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/taskFragment">
+
+    <fragment
+        android:id="@+id/taskFragment"
+        android:name="com.example.tasks.ui.fragments.TaskFragment"
+        android:label="TaskFragment"
+        tools:layout="@layout/fragment_task">
+        <action
+            android:id="@+id/action_taskFragment_to_addTaskFragment"
+            app:destination="@id/addTaskFragment"
+            app:enterAnim="@anim/slide_up"
+            app:popExitAnim="@anim/pop_slide_down" />
+        <action
+            android:id="@+id/action_taskFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/slide_up"
+            app:popExitAnim="@anim/pop_slide_down" />
+        <action
+            android:id="@+id/action_taskFragment_to_individualTaskFragment"
+            app:destination="@id/individualTaskFragment"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out_to_right" />
+        <action
+            android:id="@+id/action_taskFragment_to_taskListFragment"
+            app:destination="@id/taskListFragment" />
+        <action
+            android:id="@+id/action_taskFragment_to_completedTaskFragment"
+            app:destination="@id/completedTaskFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/pop_slide_down"
+            app:popExitAnim="@anim/pop_slide_down" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskListFragment"
+        android:name="com.example.tasks.ui.fragments.TaskListFragment"
+        android:label="TaskListFragment"
+        tools:layout="@layout/fragment_task_list">
+        <action
+            android:id="@+id/action_taskListFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/slide_up"
+            app:popExitAnim="@anim/pop_slide_down" />
+        <action
+            android:id="@+id/action_taskListFragment_to_addTaskFragment"
+            app:destination="@id/addTaskFragment"
+            app:enterAnim="@anim/slide_up"
+            app:popExitAnim="@anim/pop_slide_down" />
+        <action
+            android:id="@+id/action_taskListFragment_to_taskFragment"
+            app:destination="@id/taskFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popUpTo="@id/taskFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_taskListFragment_to_viewTaskListFragment"
+            app:destination="@id/viewTaskListFragment"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.tasks.ui.fragments.CalendarFragment"
+        android:label="CalendarFragment"
+        tools:layout="@layout/fragment_calendar">
+        <action
+            android:id="@+id/action_calendarFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/slide_up"
+            app:popExitAnim="@anim/pop_slide_down" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.tasks.ui.fragments.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/addTaskFragment"
+        android:name="com.example.tasks.ui.fragments.AddTaskFragment"
+        android:label="AddTaskFragment"
+        tools:layout="@layout/fragment_add_task" />
+    <fragment
+        android:id="@+id/individualTaskFragment"
+        android:name="com.example.tasks.ui.fragments.IndividualTaskFragment"
+        android:label="IndividualTaskFragment"
+        tools:layout="@layout/fragment_individual_task">
+        <action
+            android:id="@+id/action_individualTaskFragment_to_editTaskFragment"
+            app:destination="@id/editTaskFragment"
+            app:enterAnim="@anim/slide_up"
+            app:popExitAnim="@anim/pop_slide_down" />
+    </fragment>
+    <fragment
+        android:id="@+id/editTaskFragment"
+        android:name="com.example.tasks.ui.fragments.EditTaskFragment"
+        android:label="EditTaskFragment"
+        tools:layout="@layout/fragment_add_task" />
+    <fragment
+        android:id="@+id/completedTaskFragment"
+        android:name="com.example.tasks.ui.fragments.CompletedTaskFragment"
+        android:label="CompletedTaskFragment"
+        tools:layout="@layout/fragment_task">
+        <action
+            android:id="@+id/action_completedTaskFragment_to_individualTaskFragment"
+            app:destination="@id/individualTaskFragment"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewTaskListFragment"
+        android:name="com.example.tasks.ui.fragments.ViewTaskListFragment"
+        android:label="ViewTaskListFragment"
+        tools:layout="@layout/fragment_task" >
+        <action
+            android:id="@+id/action_viewTaskListFragment_to_individualTaskFragment"
+            app:destination="@id/individualTaskFragment"
+            app:enterAnim="@anim/slide_up"
+            app:popExitAnim="@anim/pop_slide_down" />
+        <action
+            android:id="@+id/action_viewTaskListFragment_to_addTaskFragment"
+            app:destination="@id/addTaskFragment"
+            app:enterAnim="@anim/slide_up"
+            app:popExitAnim="@anim/pop_slide_down" />
+    </fragment>
+</navigation>
