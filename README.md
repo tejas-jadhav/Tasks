@@ -4,9 +4,8 @@
 This is my second implementation of MVVM model. I have built a simple tasks app.
 You can create tasks which are reminders to keep tracks of things you need to do.
 You can perform CRUD operation on these tasks. To easily manage tasks, you can create
+task Lists and then manage individual list.
 
-
-Task Lists and then manage indvidual list.
 
 My goal of creating this project was to
 - Get more acquainted with MVVM Model
