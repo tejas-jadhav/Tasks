@@ -43,7 +43,6 @@ My goal of creating this project was to
 
 ![Screenshot_1665580410](https://user-images.githubusercontent.com/107396507/195357408-4ad79d5f-bbac-4557-ab51-11bf45966f26.png)
 
-![Screenshot_1665580425](https://user-images.githubusercontent.com/107396507/195357868-260bbeb0-e570-42c0-b375-7de51d2b9fc4.png)
 
 
 ![Screenshot_1665580425](https://user-images.githubusercontent.com/107396507/195357503-562c0dcf-8e5d-438a-8f7c-3c23948e5c8c.png)
