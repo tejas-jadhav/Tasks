@@ -36,6 +36,9 @@ My goal of creating this project was to
 - Add Calendar section to see a glimpse of distribution of tasks
 - Add settings to manage notifications depending upon priority
 
+> Quick Note
+> I have used AlarmManager to schedule notifications HOWEVER, from api 21, The recommended way is to use WorkManager. That is why it notifications might be clunky or a bit delayed (worst case not even be showed).
+
 ### App
 ![Screenshot_1665580395](https://user-images.githubusercontent.com/107396507/195356844-b24e1d4c-d324-4ac2-8045-6b03d97b302f.png)
  
